@@ -1,0 +1,8 @@
+server:
+  port: 8080
+
+garage:
+  endpoint: "http://garage:3900"
+  admin_endpoint: "http://garage:3903"
+  admin_token: "b7AwiPi9xwHSPdidE+oMPYqnl0/OPjbN1R1gsQ2Suu8="
+  region: "garage"
