@@ -22,7 +22,7 @@ services:
       - "traefik.http.services.garage-api-svc.loadbalancer.server.port=3900"
 
   garage-ui:
-    image: noooste/garage-ui:v0.12.1
+    image: noooste/garage-ui:v0.13.0
     container_name: garage-ui
     depends_on:
       - garage
