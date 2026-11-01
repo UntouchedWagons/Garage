@@ -6,7 +6,7 @@ replication_factor = 1
 
 rpc_bind_addr = "[::]:3901"
 rpc_public_addr = "127.0.0.1:3901"
-rpc_secret = "5991648f7e96250da304a547570fcc89680f67606fe6112e870f8f71325ab52e"
+rpc_secret = "5991648f7e96250da304a547570fcc89680f67606fe6112e870f8f71325ab52e" # openssl rand -hex 32
 
 [s3_api]
 s3_region = "garage"
@@ -20,5 +20,5 @@ index = "index.html"
 
 [admin]
 api_bind_addr = "[::]:3903"
-admin_token = "b7AwiPi9xwHSPdidE+oMPYqnl0/OPjbN1R1gsQ2Suu8="
-metrics_token = "agEs7/oIsrP9G6yndjGuHwWzI0Jr1gx+XCbExNmnLVM="
+admin_token = "b7AwiPi9xwHSPdidE+oMPYqnl0/OPjbN1R1gsQ2Suu8="   # openssl rand -base64 32
+metrics_token = "agEs7/oIsrP9G6yndjGuHwWzI0Jr1gx+XCbExNmnLVM=" # openssl rand -base64 32

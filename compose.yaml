@@ -5,15 +5,12 @@ services:
     image: dxflrs/garage:v2.5.0
     container_name: garage
     volumes:
-      - ./garage.toml:/etc/garage.toml
+      - ./garage/garage.toml:/etc/garage.toml
       - meta:/var/lib/garage/meta
       - data:/var/lib/garage/data
-    environment:
-      GARAGE_DEFAULT_ACCESS_KEY: GKa9e30ee69dde60ec5ebaa2ac9035c438
-      GARAGE_DEFAULT_SECRET_KEY: 7e6aabd35d9a8eb85493faf00d488689ec405b47dbc25713b0a980c0e442de03
     networks:
       - traefik_default
-    command: /garage server --single-node
+    command: /garage server --single-node # Remove once "cluster" has been set up
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
@@ -27,7 +24,7 @@ services:
     depends_on:
       - garage
     volumes:
-      - ./config.yaml:/app/config.yaml
+      - ./garage-ui/config.yaml:/app/config.yaml
     environment:
       # Garage S3 Configuration
       GARAGE_UI_GARAGE_ENDPOINT: "garage:3900"
